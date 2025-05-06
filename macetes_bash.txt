@@ -1,0 +1,90 @@
+#!/bin/bash Rscript
+
+#Comandos usados na aula:
+
+man [comando]: abre o help do comando, para sair aperte a letra 'q' e 'enter'
+
+ls: permitir visualizar os arquivos contidos em uma pasta
+- ls -lha (arquivos com maiores detalhes).
+
+cd: mudar a pasta
+- cd .. (ir para uma pasta antes)
+- cd ~ (ir para o diretório home)
+- cd / (ir para o root)
+
+pwd: o caminho absoluto para o local que estás agora
+
+mkdir: cria a pasta
+
+cat: exibe o conteudo do arquivo
+
+rm: remove arquivos
+- rm -rf (remove arquivos e pastas)
+- rmdir (remove só os diretorios)
+
+cut: extrai colunas
+echo "aBcDeF 654321" | cut -d " " -f 2
+
+sort: ordene a partir da primeira e segunda colunas o arquivo input_file
+sort -u -k1,2 input_file
+
+grep: busca determinada expressão
+grep 'r$' regex.txt (busca linhas que terminam com r dentro do arquivo regex.txt)
+outras opções:
+. : corresponde a qualquer caractere
+[]: corresponde ao intervalo de caracteres dentro de []
+[^]: corresponde ao intervalo de caracteres, exceto aqueles entre colchetes
+*: corresponde a 0 ou mais dos itens anteriores
+\: não interpreta o próximo caractere
+\+: corresponde a 1 ou mais dos itens anteriores
+\?: corresponde a 0 ou 1 dos itens anteriores
+^: o início da linha
+$: o fim da linha
+
+Condicional se a variavel "my_variable" for banana, mostre essa frase, 
+caso contrário mostre a outra frase.
+if [[ ${my_variable} == "banana" ]]; then
+  echo "Macaco pega a banana e corre"
+else
+  echo "O macaco não quer banana"
+fi
+
+Duas variaveis novas
+LifeUniverseEverything=42
+hitchhikers="awesome"
+Caso essa variavel seja 42 e a outra variavel seja "awesome" mostre a frase
+if [[ ${LifeUniverseEverything} == 42  && ${hitchhikers} == "awesome" ]]; then
+  echo "Não entre em pânico!"
+fi
+
+Caso essa variavel 42 ou a outra variavel seja "awesome" exiba a frase
+if [[ ${LifeUniverseEverything} == 42  || ${hitchhikers} == "awesome" ]]; then
+  echo "Também não entre em pânico!"
+fi
+
+Ver a quantidade de linhas dos arquivos fasta
+cat file.fq | echo $((`wc -l`/4))
+
+Verificar o tamanho da sua pasta
+du -h --max-depth=1 du -ch
+du -sh .
+
+Quais particoes tem sido usadas e quanto esta disponivel
+df -h
+
+Informacoes sobre o sistema
+top 
+htop 
+btop
+
+Loop sobre todos os cromossomos
+for i in {1..22} X Y
+do
+  echo $i
+done
+
+Faça um primer com o complemento reverso
+echo 'ATTGCTATGCTNNNT' | rev | tr 'ACTG' 'TGAC'
+
+Faça um conjunto de aminoacidos a partir das combinações de ACTG
+echo {A,C,T,G}{A,C,T,G}{A,C,T,G}
