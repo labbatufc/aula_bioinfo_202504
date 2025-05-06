@@ -9,6 +9,7 @@ Este repositório contém scripts e dados de exemplo utilizados nas aulas de Bio
 
 ## Estrutura do Repositório
 
+```
 .
 ├── 0_overview.sh             # Comandos básicos de navegação e manipulação de arquivos FASTA
 ├── 1_downloads.sh            # Download e descompactação de sequências genômicas
@@ -31,6 +32,7 @@ Este repositório contém scripts e dados de exemplo utilizados nas aulas de Bio
 ├── snps_in_IL18.txt          # SNPs na região IL18
 ├── LICENSE                   # Licença do projeto
 └── README.md                 # Documentação
+```
 
 ## Pré-requisitos
 
